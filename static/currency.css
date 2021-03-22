@@ -1,0 +1,37 @@
+body {
+      text-align: center;
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+}
+h1 {
+    font-size: 60px;
+    color: yellow;
+}
+p {
+   font-size: 25px;
+
+}
+h2 {
+    font-size: 40px;
+    color: yellow;
+    padding: 10px;
+    border: 1px solid green;
+    background: #222222;
+}
+select {
+    font-size: 20px;
+}
+input {
+    font-size: 20px;
+    width: 120px;
+}
+button {
+    font-size: 15px;
+}
