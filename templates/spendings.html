@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wylistowanie wydatków i dodawanie nowego wydatku</title>
+    <style>
+        table, th, tr, td {border: 1px solid black;}
+    </style>
+</head>
+<body>
+ <h2>Lista wydatków</h2>
+  <table>
+      <thead>
+      <th>Wydatek</th>
+      <th>Kategoria</th>
+      <th>Wartość</th>
+      </thead>
+      {% for spending in spendings %}
+      <tr>
+          <td>{{ spendings.description }}</td>
+          <td>{{ spendings.cateogry }}</td>
+          <td>{{ spendings.value }}</td>
+      </tr>
+      {% endfor %}
+  </table>
+ <h2>Dodaj nowy wydatek</h2>
+ <form method="POST" action="/spendings/">
+     {{ form.hidden_tag() }}
+         <table>
+             {% for field in form if field.widget.input_type != 'hidden' %}
+                 <tr>
+                     <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
+                     <td>{{ field }}</td>
+                 </tr>
+             {% endfor %}
+         </table>
+         <input type="submit" value="Dodaj">
+ </form>
+</body>
+</html>
